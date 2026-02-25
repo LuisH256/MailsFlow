@@ -1,46 +1,53 @@
-# MailsFlow
-
-
 # 📧 MailFlows
 
-**MailFlows** é uma plataforma inteligente para criação, padronização e gerenciamento de templates de e-mails corporativos. O foco do projeto é trazer agilidade e profissionalismo para diferentes setores de uma empresa, permitindo que e-mails complexos sejam preenchidos de forma dinâmica através de variáveis e menus de seleção.
+[Português](#br) | [English](#en)
 
-__________________________________
+---
 
-## 🚀 Funcionalidades Principais
+<a id="br"></a>
+## 🇧🇷 Português
 
-* **Editor com Preview em Tempo Real:** Visualize como o e-mail ficará enquanto você digita.
+**MailFlows** é uma plataforma inteligente para criação, padronização e gerenciamento de templates de e-mails corporativos. O foco do projeto é trazer agilidade e profissionalismo para diferentes setores de uma empresa, permitindo que e-mails complexos sejam preenchidos de forma dinâmica.
+
+### 🚀 Funcionalidades Principais
+* **Editor com Preview em Tempo Real:** Visualize o resultado final enquanto digita.
 * **Sintaxe Dinâmica Customizada:** * `{{variável}}`: Cria automaticamente campos de texto manual.
-    * `[[Rótulo: Opção 1 > Opção 2]]`: Gera menus de seleção (dropdowns) dentro do template.
-* **Gestão Empresarial por Cargos:** Administradores podem definir quais cargos têm acesso a quais modelos de e-mail.
-* **Sistema Multi-idioma:** Integração nativa com Google Translate para suporte global.
-* **Interface Moderna:** Desenvolvido com **Tailwind CSS** e foco total em UX/UI (User Experience).
-* **Gestão de Equipe:** Cadastro e controle de funcionários vinculados a uma empresa.
+    * `[[Rótulo: Opção 1 > Opção 2]]`: Gera menus de seleção (dropdowns).
+* **Gestão por Cargos:** Controle de visibilidade de templates baseado na hierarquia da empresa.
+* **Interface Moderna:** Desenvolvido com **Tailwind CSS** focado em UX/UI.
 
-__________________________________
+### 🛠️ Tecnologias
+* **PHP / PDO**: Lógica de back-end e segurança de dados.
+* **JavaScript**: Processamento de Regex para transformar tags em formulários.
+* **Tailwind CSS**: Estilização responsiva e moderna.
 
-## 🛠️ Tecnologias Utilizadas
+---
 
-* **PHP 8.x**: Lógica de back-end e conexão com banco de dados.
-* **PDO (PHP Data Objects)**: Segurança contra SQL Injection.
-* **Tailwind CSS**: Estilização moderna e responsiva.
-* **JavaScript (Vanilla)**: Processamento dinâmico de templates e manipulação de DOM para preview em tempo real.
-* **Google Fonts (Inter)**: Tipografia limpa e profissional.
+<a id="en"></a>
+## 🇺🇸 English
 
-__________________________________
+**MailFlows** is a smart platform for creating, standardizing, and managing corporate email templates. The project focuses on bringing speed and professionalism to various business sectors by allowing complex emails to be filled out dynamically.
 
-## 📖 Como Funciona (Lógica do Sistema)
+### 🚀 Key Features
+* **Real-Time Preview Editor:** See the final result instantly as you type.
+* **Custom Dynamic Syntax:** * `{{variable}}`: Automatically creates manual text input fields.
+    * `[[Label: Option 1 > Option 2]]`: Generates dropdown selection menus.
+* **Role-Based Management:** Control template visibility based on the company's hierarchy.
+* **Modern Interface:** Built with **Tailwind CSS** with a strong focus on UX/UI.
 
-### 1. Criação de Template
-O usuário utiliza uma sintaxe simples no editor. O sistema processa via Regex (Expressões Regulares) os padrões `{{}}` e `[[]]` para transformar texto estático em um formulário interativo.
+### 🛠️ Technologies
+* **PHP / PDO**: Backend logic and data security.
+* **JavaScript**: Regex processing to transform tags into interactive forms.
+* **Tailwind CSS**: Responsive and modern styling.
 
-### 2. Preenchimento Dinâmico
-Ao selecionar um template salvo, o MailFlows gera automaticamente os inputs necessários:
-- Se houver `{{nome}}`, um campo de texto "NOME" aparece.
-- Se houver `[[Kit: Mac > Dell]]`, um menu de escolha aparece.
+---
 
-### 3. Gestão de Acesso
-```php
-// Exemplo de filtragem por cargo presente no código:
-$stmt = $pdo->prepare("SELECT DISTINCT cargo FROM usuarios WHERE empresa_id = ?");
-// Isso garante que a padronização chegue apenas aos setores corretos.
+## 📖 Como a Mágica Acontece / How the Magic Works
+
+O sistema utiliza **Expressões Regulares (Regex)** para converter marcações de texto em elementos de interface:
+*The system uses **Regular Expressions (Regex)** to convert text markup into UI elements:*
+
+```javascript
+// Exemplo da lógica / Logic example:
+// {{nome}} -> <input type="text">
+// [[Kit: Mac > Dell]] -> <select><option>Mac</option></select>
