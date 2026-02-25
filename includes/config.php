@@ -3,9 +3,9 @@ session_start();
 
 // --- CONFIGURAÇÕES DE BANCO DE DADOS ---
 $host = 'localhost';
-$db   = 'u776995841_clientes'; 
-$user = 'u776995841_admin';
-$pass = 'Lh@202129';
+$db   = 'XXXXX'; 
+$user = 'XXXXX';
+$pass = 'XXXXX';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
@@ -79,4 +79,5 @@ function renderGoogleTranslate() {
         html, body { overflow-x: hidden !important; }
     </style>
     <?php
+
 }
